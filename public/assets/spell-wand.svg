@@ -1,0 +1,20 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="520" fill="#0B0A08"/>
+  <path d="M0 0H900V520H0V0Z" fill="url(#bg)"/>
+  <path d="M260 378L630 156" stroke="#C69445" stroke-width="22" stroke-linecap="round"/>
+  <path d="M214 404L309 347" stroke="#6F3D20" stroke-width="34" stroke-linecap="round"/>
+  <path d="M631 154L682 124" stroke="#F1C96B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M676 88L687 50L700 88L738 99L700 112L687 150L676 112L638 99L676 88Z" fill="#F1C96B"/>
+  <path d="M560 82L569 55L578 82L605 91L578 100L569 127L560 100L533 91L560 82Z" fill="#B7C9FF"/>
+  <path d="M735 194L742 172L749 194L771 201L749 208L742 230L735 208L713 201L735 194Z" fill="#8BD8B0"/>
+  <circle cx="639" cy="230" r="5" fill="#F1C96B"/>
+  <circle cx="714" cy="69" r="4" fill="#B7C9FF"/>
+  <circle cx="604" cy="137" r="4" fill="#8BD8B0"/>
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(620 118) rotate(126) scale(520 720)">
+      <stop stop-color="#3A2A0B"/>
+      <stop offset="0.48" stop-color="#101010"/>
+      <stop offset="1" stop-color="#070707"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -7,7 +7,7 @@ export default function CriaturasPage() {
         <p className="text-sm font-semibold uppercase text-[#caa44d]">Bestiario</p>
         <h1 className="text-4xl font-black text-white">Criaturas</h1>
         <p className="max-w-3xl text-zinc-400">
-          Criaturas de Harry Potter y Fantastic Beasts con imagen, tipo, rasgos y descripcion breve.
+          Especies del Mundo Magico de Harry Potter con imagen, tipo, rasgos y descripcion breve.
         </p>
       </header>
       <CreatureCatalog />

@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getCharactersByHouse, type House } from "@/data/potterpedia";
+import { type House } from "@/data/potterpedia";
 
 export function HouseTile({ house, priority }: { house: House; priority?: boolean }) {
-  const count = getCharactersByHouse(house.id).length;
-
   return (
     <Link
       href={`/casas/${house.id}`}
@@ -21,7 +19,7 @@ export function HouseTile({ house, priority }: { house: House; priority?: boolea
           <p className="mt-3 max-w-sm text-sm leading-6 text-zinc-300">{house.traits.join(" / ")}</p>
         </div>
         <div className="flex items-center justify-between gap-4">
-          <span className="text-sm text-zinc-300">{count} personajes del MVP</span>
+          <span className="text-sm text-zinc-300">Ver personajes de la casa</span>
           <span className="inline-flex h-10 w-10 items-center justify-center rounded border border-white/15 bg-white/[0.06] text-white transition group-hover:border-[#caa44d]/60 group-hover:bg-[#caa44d]/15">
             <ArrowRight className="h-4 w-4" aria-hidden />
           </span>

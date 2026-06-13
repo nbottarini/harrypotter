@@ -7,7 +7,7 @@ export default function PersonajesPage() {
         <p className="text-sm font-semibold uppercase text-[#caa44d]">Archivo de personajes</p>
         <h1 className="text-4xl font-black text-white">Personajes</h1>
         <p className="max-w-3xl text-zinc-400">
-          Fichas con casa, familia, profesion y datos clave de los personajes principales y secundarios del MVP.
+          Personajes principales y secundarios con acceso a una ficha completa de cada uno.
         </p>
       </header>
       <CharacterExplorer />

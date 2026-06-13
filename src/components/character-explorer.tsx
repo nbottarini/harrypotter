@@ -13,6 +13,7 @@ type CharacterExplorerProps = {
 export function CharacterExplorer({ initialCharacters = characters, lockedHouse }: CharacterExplorerProps) {
   const [query, setQuery] = useState("");
   const [house, setHouse] = useState<HouseId | "todas">(lockedHouse ?? "todas");
+  const [visibleCount, setVisibleCount] = useState(120);
 
   const filteredCharacters = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -34,6 +35,8 @@ export function CharacterExplorer({ initialCharacters = characters, lockedHouse 
       return matchesHouse && (!normalizedQuery || haystack.includes(normalizedQuery));
     });
   }, [house, initialCharacters, query]);
+
+  const visibleCharacters = filteredCharacters.slice(0, visibleCount);
 
   return (
     <section className="space-y-6">
@@ -75,15 +78,45 @@ export function CharacterExplorer({ initialCharacters = characters, lockedHouse 
       </div>
 
       <div className="flex items-center justify-between text-sm text-zinc-400">
-        <span>{filteredCharacters.length} personajes</span>
+        <span>
+          Mostrando {Math.min(visibleCount, filteredCharacters.length)} de {filteredCharacters.length} personajes
+        </span>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {filteredCharacters.map((character) => (
-          <CharacterCard key={character.id} character={character} />
-        ))}
-      </div>
+      {filteredCharacters.length > 0 ? (
+        <>
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            {visibleCharacters.map((character) => (
+              <CharacterCard key={character.id} character={character} />
+            ))}
+          </div>
+          {visibleCount < filteredCharacters.length ? (
+            <div className="flex justify-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((current) => current + 120)}
+                className="min-h-11 rounded border border-[#caa44d]/50 bg-[#caa44d]/10 px-5 text-sm font-semibold text-[#f1c96b] transition hover:bg-[#caa44d]/20"
+              >
+                Mostrar mas personajes
+              </button>
+            </div>
+          ) : null}
+        </>
+      ) : (
+        <EmptySearchMessage query={query} label="personajes" />
+      )}
     </section>
+  );
+}
+
+function EmptySearchMessage({ query, label }: { query: string; label: string }) {
+  return (
+    <div className="rounded border border-white/10 bg-white/[0.03] px-5 py-10 text-center">
+      <p className="text-lg font-black text-white">No se encontraron {label}</p>
+      <p className="mt-2 text-sm text-zinc-400">
+        {query.trim() ? `No hay resultados para "${query.trim()}".` : "No hay resultados con los filtros actuales."}
+      </p>
+    </div>
   );
 }
 
