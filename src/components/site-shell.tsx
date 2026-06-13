@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { BookOpen, Castle, Home, ScrollText, Sparkles } from "lucide-react";
+import { BookOpen, Castle, Home, ScrollText, Sparkles, Wand2 } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Inicio", icon: Home },
   { href: "/personajes", label: "Personajes", icon: BookOpen },
   { href: "/hechizos", label: "Hechizos", icon: Sparkles },
   { href: "/criaturas", label: "Criaturas", icon: ScrollText },
+  { href: "/trivia", label: "Trivia", icon: Wand2 },
 ];
 
 export function SiteShell({ children }: { children: React.ReactNode }) {

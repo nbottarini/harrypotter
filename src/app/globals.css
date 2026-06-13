@@ -39,3 +39,78 @@ button,
 input {
   font: inherit;
 }
+
+/* --- Trivia: animaciones de resultado --- */
+@keyframes trivia-pop {
+  0% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes trivia-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  15%,
+  45%,
+  75% {
+    transform: translateX(-8px);
+  }
+  30%,
+  60%,
+  90% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes trivia-confetti-fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(420%) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+.trivia-pop {
+  animation: trivia-pop 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.trivia-shake {
+  animation: trivia-shake 0.5s ease-in-out both;
+}
+
+.trivia-confetti {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: trivia-confetti-fall 2.2s ease-in infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trivia-pop,
+  .trivia-shake,
+  .trivia-confetti {
+    animation: none;
+  }
+  .trivia-confetti {
+    display: none;
+  }
+}
