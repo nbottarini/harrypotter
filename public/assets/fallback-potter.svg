@@ -1,0 +1,15 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#0B0A08"/>
+  <path d="M0 0H800V1000H0V0Z" fill="url(#g)"/>
+  <circle cx="400" cy="365" r="178" fill="#15110A" stroke="#CAA44D" stroke-width="8"/>
+  <path d="M309 283H356V348H444V283H491V523H444V390H356V523H309V283Z" fill="#F1C96B"/>
+  <path d="M395 553L442 443H391L457 292L432 405H486L395 553Z" fill="#D33A3F"/>
+  <text x="400" y="690" text-anchor="middle" fill="#F1C96B" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">POTTERPEDIA</text>
+  <text x="400" y="742" text-anchor="middle" fill="#A1A1AA" font-family="Arial, Helvetica, sans-serif" font-size="28">Imagen no disponible</text>
+  <defs>
+    <radialGradient id="g" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 210) rotate(90) scale(620 560)">
+      <stop stop-color="#3D2C0A"/>
+      <stop offset="1" stop-color="#070707"/>
+    </radialGradient>
+  </defs>
+</svg>
